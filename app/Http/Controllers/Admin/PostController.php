@@ -46,7 +46,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+       // dd($request->all());
         $request->validate([
 
             'title'=>'required|max:255',
@@ -142,7 +142,7 @@ class PostController extends Controller
         while($checkPost){
             $slug = Str::slug($title . '-' . $counter, '-');
             $counter++;
-            $chekPost = Post::where('slug',$slug)->first();
+            $checkPost = Post::where('slug',$slug)->first();
 
         }
        
